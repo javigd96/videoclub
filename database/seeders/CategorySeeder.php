@@ -13,11 +13,10 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::insert([
-            ['name' =>'Drama'],
-            ['name' =>'Comedia'],
-            ['name' =>'Western'],
-            ['name' =>'Musical']
-        ]);
+            Category::create(['title' =>'Drama']);
+            Category::create(['title' =>'Comedia']);
+            Category::create(['title' =>'Western']);
+            Category::create(['title' =>'Musical']);
+        
     }
 }

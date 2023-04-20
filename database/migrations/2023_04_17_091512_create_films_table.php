@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categorys');
+            $table->foreign('category_id')->references('id')->on('categories');
              //$table->foreignIdFor(Category::class)->constrained();
             $table->longText('synopsis')->nullable();
             $table->string('year');
