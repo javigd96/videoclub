@@ -16,7 +16,7 @@ class Film extends Model
         'director',
         'poster',
         'rented', 
-
+        'category_id',
     ];
 
     public function category(){

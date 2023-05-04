@@ -33,4 +33,12 @@ Route::middleware('auth')->group(function () {
 Route::resource('films',FilmController::class)->middleware(['auth','verified']);
 Route::resource('catalogo',CatalogoController::class)->middleware(['auth','verified']);
 
+Route::get('/catalogo/{film}/rent',[CatalogoController::class, 'rent'])->name('catalogo.rent');
+Route::get('/catalogo/{film}/rent2',[CatalogoController::class, 'rent2'])->name('catalogo.rent2');
+Route::put('/catalogo/{film}/rent',[CatalogoController::class, 'rent'])->name('catalogo.rent');
+Route::put('/catalogo/{film}/rent2',[CatalogoController::class, 'rent2'])->name('catalogo.rent2');
+
+Route::get('/film/{film}', [FilmController::class, 'edit'])->name('film.edit');
+Route::put('/film/{film}', [FilmController::class, 'destroy'])->name('film.destroy');
+
 require __DIR__.'/auth.php';

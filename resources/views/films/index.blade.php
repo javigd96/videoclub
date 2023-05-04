@@ -81,19 +81,26 @@
                     </td>
                     
                     <td class="py-4 px-5 flex items-center gap-x-2.5">
-      
-                        <a href="{{ route('films.edit', $film->id) }}" class="font-medium text-blue-600  hover:underline">
+                        <button class="rounded-5m bg-blue-500 font-bold py-2 px-4 text-600">
+                        <a href="{{ route('films.edit', $film->id) }}" class="font-medium text-white-600  hover:underline">
                             Edit
-                        </a>
+                        </a></button>
            
                         {{-- Delete Article --}}
+                        
                         <form action="{{ route('films.destroy', $film->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="px-2 font-medium text-red-600  hover:underline">
+                            <button class="rounded-5m bg-red-500 font-bold py-2 px-4 text-600" 
+                            type="submit" class="px-2 font-medium text-white-600  hover:underline">
                                 Delete
                             </button>
                         </form>
+
+                        <button class="rounded-5m bg-green-500 font-bold py-2 px-4 text-600">
+                            <a href="{{ route('films.show', $film) }}">
+                                Mostrar
+                        
                         
                     </td>
                 </tr>

@@ -16,11 +16,14 @@
         
 
                 @forelse ($films as $film)
-                <div>    
+                <div> 
+                    <a href="{{route('catalogo.show',$film) }}"> 
                     <img src="{{ asset('images/'.$film->poster) }}"class="roundedimg-fluid   alt="foto pelicula">
+                    </a>
                     <h4 class="min-h-45 my-2">
 
                     {{ $film->title }}
+</h4>
                     
                  </div>     
                     @empty
