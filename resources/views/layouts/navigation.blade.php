@@ -21,6 +21,14 @@
                     <x-nav-link :href="route('catalogo.index')" :active="request()->routeIs('catalogo.*')">
                         {{ __('Catálogo') }}
                     </x-nav-link>
+
+                    @if(Auth::user()->hasRole('admin'))
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                            {{ __('Usuarios') }}
+                        </x-nav-link>
+                    @endif
+                
+
                 </div>
             </div>
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\CatalogoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('films',FilmController::class)->middleware(['auth','verified']);
 Route::resource('catalogo',CatalogoController::class)->middleware(['auth','verified']);
+Route::resource('users',UserController::class)->middleware(['auth','verified']);
 
 Route::get('/catalogo/{film}/rent',[CatalogoController::class, 'rent'])->name('catalogo.rent');
 Route::get('/catalogo/{film}/rent2',[CatalogoController::class, 'rent2'])->name('catalogo.rent2');

@@ -23,7 +23,7 @@ class FilmRequest extends FormRequest
     {
         return match($this->method()) {
             "POST" =>[
-                "title" =>"required|min:2|max:40|unique:films,title,".$this->route('film')->id,
+                "title" =>"required|min:2|max:40|unique:films,title,",
                 "category_id" => "required|exists:categories,id",
                 "synopsis" =>"min:5|max:500",
                 "year" =>"required|integer|between:1940,2023",
@@ -33,7 +33,7 @@ class FilmRequest extends FormRequest
             ],
             "PUT" =>[
                 
-                "title" =>"required|min:2|max:40",
+                "title" =>"required|min:2|max:40".$this->route('film')->id,
                 "category_id" => "required|exists:categories,id",
                 "synopsis" =>"min:5|max:500",
                 "year" =>"required|integer|between:1940,2023",

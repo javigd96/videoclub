@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+'Collective\Html\HtmlServiceProvider';
 
 return [
 
@@ -209,6 +210,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
