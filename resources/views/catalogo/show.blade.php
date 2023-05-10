@@ -54,16 +54,30 @@
                     <button type='submit' class='rounded-5m bg-blue-500 ml-4'>devolver pelicula</button>
                 </form>
                 @endif
-                    <form action="{{ route('film.edit',$film) }}" method="GET">
 
+                    <form action="{{ route('film.edit',$film) }}" method="GET">
+                    @if(Auth()->user()->hasRole('admin'))
                     <button type='submit' class='rounded-5m bg-green-500 ml-4'>Editar Pelicula</button>
+
+                    @else
+                    <button type='submit' class='rounded-5m bg-green-500 ml-4' onclick="return false;">Editar Pelicula</button>
+                    @endif
                 </form>
+                
+
 
                 <form action="{{ route('film.destroy',$film) }}"style="display:inline">
                     @csrf
                     @method('delete')
+                    @if(Auth()->user()->hasRole('admin'))
                     <button type='submit' class='rounded-5m bg-red-500 ml-4'>Borrar Pelicula</button>
+
+                    @else
+                    <button type='submit' class='rounded-5m bg-red-500 ml-4'onclick="return false;">Borrar Pelicula</button>
+
+                    @endif
                 </form>
+                
 
                 <form action="{{ route('catalogo.index') }}"style="display:inline">
                     

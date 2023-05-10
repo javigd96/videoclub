@@ -112,7 +112,7 @@
                             @method('delete')
                             @if(Auth()->user()->hasRole('admin'))
 
-                            <button class="rounded-5m bg-red-500 font-bold py-2 px-1 text-"
+                            <button class="rounded-5m bg-red-500 font-bold py-2 px-1 text-white"
                             type="submit" class="px-2 font-medium text-white  hover:underline">
                             
                                 Delete
